@@ -1,0 +1,16 @@
+{
+  "auth":{
+    "username": "Username",
+    "placeHolderUsername": "username",
+    "password": "Password",
+    "placeHolderPassword": "password",
+    "login": "Login",
+    "loginSuccess": "Login Successful",
+    "welcomeAdmin": "Welcome, Admin!",
+    "welcomePatient": "Welcome, Patient!",
+    "loginFailed": "Login Failed",
+    "invalidCredentials": "Invalid username or password",
+    "usernameRequired": "Username is required",
+    "passwordRequired": "Password is required"
+  }
+}

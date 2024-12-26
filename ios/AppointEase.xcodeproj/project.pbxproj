@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004DAED8578D4A729F34895A /* CoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5650FEC9A092499594C8F8A5 /* CoText-Regular.otf */; };
 		00E356F31AD99517003FC87E /* AppointEaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AppointEaseTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-AppointEase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-AppointEase.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
@@ -15,6 +16,8 @@
 		6132EF182BDFF13200BBE14D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 6132EF172BDFF13200BBE14D /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-AppointEase-AppointEaseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AppointEase-AppointEaseTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A2F7DB9D57E44DCCBE1A9420 /* CoText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E556E9CD4CCA48C2BF2610BF /* CoText-Bold.otf */; };
+		DAAB8F20015A405C98D7F46A /* CoText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A50F47661494FEA9BEE3C36 /* CoText-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,7 @@
 		00E356EE1AD99517003FC87E /* AppointEaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppointEaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* AppointEaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointEaseTests.m; sourceTree = "<group>"; };
+		0A50F47661494FEA9BEE3C36 /* CoText-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "CoText-Light.otf"; path = "../src/assets/fonts/CoText-Light.otf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* AppointEase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppointEase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AppointEase/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = AppointEase/AppDelegate.mm; sourceTree = "<group>"; };
@@ -39,12 +43,14 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AppointEase/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-AppointEase-AppointEaseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppointEase-AppointEaseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-AppointEase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointEase.debug.xcconfig"; path = "Target Support Files/Pods-AppointEase/Pods-AppointEase.debug.xcconfig"; sourceTree = "<group>"; };
+		5650FEC9A092499594C8F8A5 /* CoText-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "CoText-Regular.otf"; path = "../src/assets/fonts/CoText-Regular.otf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-AppointEase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointEase.release.xcconfig"; path = "Target Support Files/Pods-AppointEase/Pods-AppointEase.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-AppointEase-AppointEaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointEase-AppointEaseTests.debug.xcconfig"; path = "Target Support Files/Pods-AppointEase-AppointEaseTests/Pods-AppointEase-AppointEaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-AppointEase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppointEase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6132EF172BDFF13200BBE14D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = AppointEase/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AppointEase/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-AppointEase-AppointEaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointEase-AppointEaseTests.release.xcconfig"; path = "Target Support Files/Pods-AppointEase-AppointEaseTests/Pods-AppointEase-AppointEaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		E556E9CD4CCA48C2BF2610BF /* CoText-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "CoText-Bold.otf"; path = "../src/assets/fonts/CoText-Bold.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -108,6 +114,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		710A83E1F51B42F4ADA80723 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E556E9CD4CCA48C2BF2610BF /* CoText-Bold.otf */,
+				0A50F47661494FEA9BEE3C36 /* CoText-Light.otf */,
+				5650FEC9A092499594C8F8A5 /* CoText-Regular.otf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +142,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				710A83E1F51B42F4ADA80723 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -247,6 +265,9 @@
 				6132EF182BDFF13200BBE14D /* PrivacyInfo.xcprivacy in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				A2F7DB9D57E44DCCBE1A9420 /* CoText-Bold.otf in Resources */,
+				DAAB8F20015A405C98D7F46A /* CoText-Light.otf in Resources */,
+				004DAED8578D4A729F34895A /* CoText-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
