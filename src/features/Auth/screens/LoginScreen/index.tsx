@@ -15,12 +15,14 @@ import {useTranslation} from 'react-i18next';
 import {useTheme} from '../../../../theme';
 import {adminData} from '../../../../utils/mockData/admin';
 import {patientData} from '../../../../utils/mockData/patient';
+import {HeaderComponent} from '../../../../components';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
   const {theme} = useTheme();
   const styles = getStyles(theme);
   const {t} = useTranslation();
-
+  const navigation = useNavigation<NavigationProp<any>>();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -61,6 +63,10 @@ const LoginScreen = () => {
         <ScrollView
           contentContainerStyle={styles.scrollViewContainer}
           keyboardShouldPersistTaps="handled">
+          <HeaderComponent
+            title={t('auth.login')}
+            onBackPress={() => navigation.goBack()}
+          />
           <View style={styles.container}>
             <InputComponent
               label={t('auth.username')}
