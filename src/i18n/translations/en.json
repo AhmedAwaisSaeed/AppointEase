@@ -1,4 +1,7 @@
 {
+  "common":{
+    "ok": "ok"
+  },
   "auth":{
     "username": "Username",
     "placeHolderUsername": "username",
@@ -12,5 +15,9 @@
     "invalidCredentials": "Invalid username or password",
     "usernameRequired": "Username is required",
     "passwordRequired": "Password is required"
+  },
+  "dashboard":{
+    "admin":"admin",
+    "patient":"patient"
   }
 }

@@ -18,8 +18,11 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({
   return (
     <View style={[styles.container, {paddingTop: top}, style]}>
       <TouchableOpacity onPress={onBackPress} style={styles.iconContainer}>
-        <Icon name="arrow-back" size={24} color={theme.text.primaryText} />
+        {onBackPress && (
+          <Icon name="arrow-back" size={24} color={theme.text.primaryText} />
+        )}
       </TouchableOpacity>
+
       <Text style={styles.title}>{title}</Text>
       <View style={styles.placeholder} />
     </View>

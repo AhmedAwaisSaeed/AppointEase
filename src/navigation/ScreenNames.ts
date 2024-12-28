@@ -2,6 +2,8 @@ enum ScreenNames {
   //Auth Stack
 
   LoginScreen = 'LoginScreen',
+  AdminHomeScreen = 'AdminHomeScreen',
+  PatientHomeScreen = 'PatientHomeScreen',
 
   //Home Stack
 }
