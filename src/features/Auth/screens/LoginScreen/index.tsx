@@ -15,12 +15,16 @@ import {useTranslation} from 'react-i18next';
 import {useTheme} from '../../../../theme';
 import {adminData} from '../../../../utils/mockData/admin';
 import {patientData} from '../../../../utils/mockData/patient';
-
+import {HeaderComponent} from '../../../../components';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {useAuth} from '../../../../context/AuthProvider';
+import StackNames from '../../../../navigation/StackNames';
 const LoginScreen = () => {
+  const {setUserType} = useAuth();
   const {theme} = useTheme();
   const styles = getStyles(theme);
   const {t} = useTranslation();
-
+  const navigation = useNavigation<NavigationProp<any>>();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -29,6 +33,12 @@ const LoginScreen = () => {
   const handleLogin = () => {
     console.log('button pressed');
     setTouched(true);
+
+    if (!username || !password) {
+      Alert.alert(t('auth.loginFailed'), t('auth.fillAllFields'));
+      return;
+    }
+
     setLoading(true);
 
     // Simulate API call delay
@@ -44,9 +54,27 @@ const LoginScreen = () => {
       setLoading(false);
 
       if (admin) {
-        Alert.alert(t('auth.loginSuccess'), t('auth.welcomeAdmin'));
+        setUserType('admin');
+        navigation.reset({
+          index: 0,
+          routes: [
+            {
+              name: StackNames.HomeNavigationStack,
+              params: {userType: 'admin'},
+            },
+          ],
+        });
       } else if (patient) {
-        Alert.alert(t('auth.loginSuccess'), t('auth.welcomePatient'));
+        setUserType('patient');
+        navigation.reset({
+          index: 0,
+          routes: [
+            {
+              name: StackNames.HomeNavigationStack,
+              params: {userType: 'patient'},
+            },
+          ],
+        });
       } else {
         Alert.alert(t('auth.loginFailed'), t('auth.invalidCredentials'));
       }
@@ -61,6 +89,7 @@ const LoginScreen = () => {
         <ScrollView
           contentContainerStyle={styles.scrollViewContainer}
           keyboardShouldPersistTaps="handled">
+          <HeaderComponent />
           <View style={styles.container}>
             <InputComponent
               label={t('auth.username')}
