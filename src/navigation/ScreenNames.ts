@@ -2,10 +2,15 @@ enum ScreenNames {
   //Auth Stack
 
   LoginScreen = 'LoginScreen',
-  AdminHomeScreen = 'AdminHomeScreen',
-  PatientHomeScreen = 'PatientHomeScreen',
-
   //Home Stack
+  //Patient
+  PatientHomeScreen = 'PatientHomeScreen',
+  AddNewAppointment = 'AddNewAppointment',
+  ThankYouScreen = 'ThankYouScreen',
+
+  // Admin
+  AdminHomeScreen = 'AdminHomeScreen',
+  AdminFeedbackScreen = 'AdminFeedbackScreen',
 }
 
 export default ScreenNames;
