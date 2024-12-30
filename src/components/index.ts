@@ -4,3 +4,4 @@ export {HeaderComponent} from './HeaderComponent';
 export {DatePickerComponent} from './DatePickerComponent';
 export {DropdownComponent} from './DropdownComponent';
 export {TimeSlotSelector} from './TimeSlotSelector';
+export {CustomAlert} from './CustomAlert';

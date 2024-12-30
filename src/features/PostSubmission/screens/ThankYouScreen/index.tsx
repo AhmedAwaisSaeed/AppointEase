@@ -3,15 +3,21 @@ import {View, Text, Alert} from 'react-native';
 import {getStyles} from './styles';
 import {useTranslation} from 'react-i18next';
 import {useTheme} from '../../../../theme';
-import {HeaderComponent, ButtonComponent} from '../../../../components';
+import {
+  HeaderComponent,
+  ButtonComponent,
+  CustomAlert,
+} from '../../../../components';
 import {useAdminStore} from '../../../../store/AdminStore';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import StackNames from '../../../../navigation/StackNames';
+import {useCustomAlertStore} from '../../../../store/CustomAlertStore';
 
 const ThankYouScreen = () => {
   const {theme} = useTheme();
   const styles = getStyles(theme);
   const {t} = useTranslation();
+  const {showAlert} = useCustomAlertStore();
   const navigation = useNavigation<NavigationProp<any>>();
   const {adminData, addFeedback} = useAdminStore();
 
@@ -19,15 +25,13 @@ const ThankYouScreen = () => {
 
   const handleSubmitFeedback = () => {
     if (!rating) {
-      Alert.alert(t('common.error'), t('feedback.selectRating'));
+      showAlert(t('common.error'), t('feedback.selectRating'));
       return;
     }
 
     addFeedback(rating);
 
-    Alert.alert(t('feedback.thankYou'), t('feedback.feedbackSubmitted'), [
-      {text: t('common.ok')},
-    ]);
+    showAlert(t('feedback.thankYou'), t('feedback.feedbackSubmitted'));
 
     navigation.reset({
       index: 0,

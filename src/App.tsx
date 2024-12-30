@@ -4,13 +4,16 @@ import MainNavigator from './navigation/MainNavigator';
 import {ThemeProvider} from './theme';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {AuthProvider} from './context/AuthProvider';
+import CustomAlertProvider from './context/CustomAlertProvider';
 
 const App = () => {
   return (
     <SafeAreaProvider>
       <ThemeProvider>
         <AuthProvider>
-          <MainNavigator />
+          <CustomAlertProvider>
+            <MainNavigator />
+          </CustomAlertProvider>
         </AuthProvider>
       </ThemeProvider>
     </SafeAreaProvider>

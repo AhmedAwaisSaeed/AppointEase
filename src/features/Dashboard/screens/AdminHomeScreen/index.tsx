@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, FlatList, Text, Alert} from 'react-native';
+import {View, FlatList, Text} from 'react-native';
 import {getStyles} from './styles';
 import {useTranslation} from 'react-i18next';
 import {useTheme} from '../../../../theme';
@@ -9,15 +9,16 @@ import {NavigationProp, useNavigation} from '@react-navigation/native';
 import ScreenNames from '../../../../navigation/ScreenNames';
 import {useAuthStore} from '../../../../store/AuthStore';
 import StackNames from '../../../../navigation/StackNames';
+import {useCustomAlertStore} from '../../../../store/CustomAlertStore';
 
 const AdminHomeScreen = () => {
   const {theme} = useTheme();
   const styles = getStyles(theme);
   const {t} = useTranslation();
   const navigation = useNavigation<NavigationProp<any>>();
-
   const {adminData, loadAdminData, updateAppointmentStatus} = useAdminStore();
   const {logout} = useAuthStore();
+  const {showAlert} = useCustomAlertStore();
 
   useEffect(() => {
     loadAdminData();
@@ -30,10 +31,9 @@ const AdminHomeScreen = () => {
 
     updateAppointmentStatus(adminData[0], updatedAppointments);
 
-    // Reload admin data to reflect the changes
     loadAdminData();
 
-    Alert.alert(t('appointments.statusUpdated'));
+    showAlert(t('appointments.success'), t('appointments.statusUpdated'));
   };
 
   const handleLogout = () => {
@@ -42,7 +42,7 @@ const AdminHomeScreen = () => {
       index: 0,
       routes: [{name: StackNames.AuthStack}],
     });
-    Alert.alert(t('auth.loggedOut'), t('auth.redirectToLogin'));
+    showAlert(t('auth.loggedOut'), t('auth.redirectToLogin'));
   };
 
   const renderAppointmentItem = ({item}: {item: any}) => (

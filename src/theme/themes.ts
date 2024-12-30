@@ -1,8 +1,6 @@
-//PLEASE TAKE APPROVAL BEFORE CHANGING ANY VALUE IN THIS FILE
-
-import {Theme} from './types'
+import {Theme} from './types';
 interface ThemesType {
-  [key: string]: Theme
+  [key: string]: Theme;
 }
 
 export const themes: ThemesType = {
@@ -1040,4 +1038,4 @@ export const themes: ThemesType = {
       inActive: '#ABABAB',
     },
   },
-}
+};

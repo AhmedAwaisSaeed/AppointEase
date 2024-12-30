@@ -9,7 +9,7 @@ export const getStyles = (props: Theme) =>
       alignItems: 'center',
       justifyContent: 'space-between',
       backgroundColor: props.primaryBackground.primaryBG,
-      paddingBottom: 8, // Optional if needed
+      paddingBottom: 8,
     },
     iconContainer: {
       padding: 8,
@@ -21,11 +21,9 @@ export const getStyles = (props: Theme) =>
       textTransform: 'capitalize',
     },
     placeholder: {
-      width: 32, // Matches the size of the icon container
+      width: 32,
     },
     logoutContainer: {
-      //   position: 'absolute',
       right: 16,
-      //   top: 0,
     },
   });

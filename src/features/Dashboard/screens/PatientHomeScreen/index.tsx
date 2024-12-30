@@ -1,5 +1,5 @@
-import React, {useCallback, useEffect} from 'react';
-import {View, FlatList, Text, TouchableOpacity, Alert} from 'react-native';
+import React, {useCallback} from 'react';
+import {View, FlatList, Text} from 'react-native';
 import {getStyles} from './styles';
 import {useTranslation} from 'react-i18next';
 import {useTheme} from '../../../../theme';
@@ -10,15 +10,16 @@ import ScreenNames from '../../../../navigation/ScreenNames';
 import {useFocusEffect} from '@react-navigation/native';
 import {useAuthStore} from '../../../../store/AuthStore';
 import StackNames from '../../../../navigation/StackNames';
+import {useCustomAlertStore} from '../../../../store/CustomAlertStore';
 
 const PatientHomeScreen = () => {
   const {theme} = useTheme();
   const styles = getStyles(theme);
   const {t} = useTranslation();
   const navigation = useNavigation<NavigationProp<any>>();
-
   const {adminData, loadAdminData} = useAdminStore() || {};
   const {logout} = useAuthStore();
+  const {showAlert} = useCustomAlertStore();
 
   useFocusEffect(
     useCallback(() => {
@@ -44,27 +45,7 @@ const PatientHomeScreen = () => {
       index: 0,
       routes: [{name: StackNames.AuthStack}],
     });
-    Alert.alert(t('auth.loggedOut'), t('auth.redirectToLogin'));
-  };
-
-  const handleDeleteAppointment = (appointmentId: number) => {
-    Alert.alert(
-      t('appointments.confirmDeleteTitle'),
-      t('appointments.confirmDeleteMessage'),
-      [
-        {text: t('common.cancel'), style: 'cancel'},
-        {
-          text: t('common.delete'),
-          onPress: () => {
-            const updatedAppointments = adminData?.[0]?.appointments.filter(
-              appointment => appointment.id !== appointmentId,
-            );
-            adminData[0].appointments = updatedAppointments || {}; // Update locally
-            Alert.alert(t('appointments.deletedSuccess'));
-          },
-        },
-      ],
-    );
+    showAlert(t('auth.loggedOut'), t('auth.redirectToLogin'));
   };
 
   const renderAppointmentItem = ({item}: {item: any}) => (
