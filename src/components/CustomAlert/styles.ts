@@ -25,13 +25,15 @@ export const getStyles = (props: Theme) =>
     title: {
       fontSize: StyleConsts.fontSize.titleH1Size,
       fontFamily: StyleConsts.fontFamily.coText,
+      lineHeight: StyleConsts.lineHeight.lineHeight16,
       color: props.text.primaryText,
       marginBottom: 10,
     },
     message: {
       fontSize: StyleConsts.fontSize.titleH2Size,
       fontFamily: StyleConsts.fontFamily.coText,
-      color: props.text.secondaryText,
+      lineHeight: StyleConsts.lineHeight.lineHeight16,
+      color: props.text.subTitle,
       textAlign: 'center',
       marginBottom: 20,
     },

@@ -33,7 +33,7 @@ const AdminHomeScreen = () => {
 
     loadAdminData();
 
-    showAlert(t('appointments.success'), t('appointments.statusUpdated'));
+    showAlert('', t('appointments.statusUpdated'));
   };
 
   const handleLogout = () => {
