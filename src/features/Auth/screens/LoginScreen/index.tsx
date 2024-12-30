@@ -115,6 +115,7 @@ const LoginScreen = () => {
             />
 
             <ButtonComponent
+              style={styles.buttonStyle}
               label={t('auth.login')}
               onPress={handleLogin}
               loading={loading}

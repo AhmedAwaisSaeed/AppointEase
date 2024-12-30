@@ -1,6 +1,10 @@
 {
   "common":{
-    "ok": "ok"
+    "ok": "ok",
+    "error":"error",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel"
   },
   "auth":{
     "username": "Username",
@@ -14,10 +18,57 @@
     "loginFailed": "Login Failed",
     "invalidCredentials": "Invalid username or password",
     "usernameRequired": "Username is required",
-    "passwordRequired": "Password is required"
+    "passwordRequired": "Password is required",
+    "loggedOut": "You have been logged out.",
+    "redirectToLogin": "Redirecting to login screen..."
   },
   "dashboard":{
     "admin":"admin",
     "patient":"patient"
+  },
+  "appointments": {
+    "patientName": "Patient Name",
+    "contactNumber": "Contact Number",
+    "appointmentDate": "Appointment Date",
+    "appointmentTime": "Appointment Time",
+    "reason": "Reason for Booking",
+    "selectReason": "Select a reason",
+    "timeRequired": "Time is required.",
+    "dateRequired": "Date is required.",
+    "reasonRequired": "Reason is required.",
+    "patientNameRequired": "Patient name is required.",
+    "contactNumberRequired": "Contact number is required.",
+    "fillAllFields": "Please fill all the fields to continue.",
+    "success": "Appointment created successfully!",
+    "confirmation": "Your appointment has been added.",
+    "error": "Error",
+    "doubleBookingError": "This time slot is already booked: {{time}}. Please select a different time.",
+    "enterContactNumber":"enter Contact Number",
+    "enterPatientName":"enter Patient Name",
+    "submit":"submit",
+    "addNew": "Add New Appointment",
+    "noAppointments": "No appointments available.",
+    "confirmDeleteTitle": "Delete Appointment",
+    "confirmDeleteMessage": "Are you sure you want to delete this appointment?",
+    "deletedSuccess": "Appointment deleted successfully.",
+    "editAppointment": "Edit Appointment",
+    "updatedSuccess": "Appointment updated successfully!",
+    "update": "Update Appointment",
+    "status": "Status",
+    "markDone": "Mark as Done",
+    "markCancelled": "Mark as Cancelled",
+    "statusUpdated": "Appointment status updated successfully!"
+  },
+  "feedback": {
+    "thankYouTitle": "Thank You",
+    "message": "How do you like our booking system?",
+    "submit": "Submit Feedback",
+    "selectRating": "Please select a rating.",
+    "thankYou": "Thank You!",
+    "feedbackSubmitted": "Your feedback has been submitted successfully.",
+    "adminFeedbackTitle": "Feedback Overview",
+    "averageRating": "Average Rating",
+    "totalFeedback": "Total Feedback Received",
+    "viewFeedback": "View Feedback Ratings"
   }
 }

@@ -10,9 +10,10 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({
   title,
   onBackPress,
   style,
+  onLogout,
 }) => {
   const {theme} = useTheme();
-  const {top} = useSafeAreaInsets();
+  const {top, bottom} = useSafeAreaInsets();
   const styles = getStyles(theme);
 
   return (
@@ -24,7 +25,17 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({
       </TouchableOpacity>
 
       <Text style={styles.title}>{title}</Text>
-      <View style={styles.placeholder} />
+      <View style={styles.placeholder}>
+        {onLogout && (
+          <TouchableOpacity onPress={onLogout} style={styles.logoutContainer}>
+            <Icon
+              name="log-out-outline"
+              size={24}
+              color={theme.text.primaryText}
+            />
+          </TouchableOpacity>
+        )}
+      </View>
     </View>
   );
 };

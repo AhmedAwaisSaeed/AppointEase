@@ -5,13 +5,16 @@ export const getStyles = (props: Theme) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      marginTop: '30%',
-      marginHorizontal: 10,
+      paddingHorizontal: 10,
+      backgroundColor: props.primaryBackground.primaryBG,
     },
     keyboardAvoidViewcontainer: {
       flex: 1,
     },
     scrollViewContainer: {
       flexGrow: 1,
+    },
+    buttonStyle: {
+      marginHorizontal: 10,
     },
   });
