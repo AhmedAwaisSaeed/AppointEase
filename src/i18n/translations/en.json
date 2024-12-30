@@ -20,7 +20,8 @@
     "usernameRequired": "Username is required",
     "passwordRequired": "Password is required",
     "loggedOut": "You have been logged out.",
-    "redirectToLogin": "Redirecting to login screen..."
+    "redirectToLogin": "Redirecting to login screen...",
+    "fillAllFields": "Please fill all the fields to continue."
   },
   "dashboard":{
     "admin":"admin",
@@ -38,7 +39,6 @@
     "reasonRequired": "Reason is required.",
     "patientNameRequired": "Patient name is required.",
     "contactNumberRequired": "Contact number is required.",
-    "fillAllFields": "Please fill all the fields to continue.",
     "success": "Appointment created successfully!",
     "confirmation": "Your appointment has been added.",
     "error": "Error",
@@ -57,7 +57,8 @@
     "status": "Status",
     "markDone": "Mark as Done",
     "markCancelled": "Mark as Cancelled",
-    "statusUpdated": "Appointment status updated successfully!"
+    "statusUpdated": "Appointment status updated successfully!",
+    "fillAllFields": "Please fill all the fields to continue."
   },
   "feedback": {
     "thankYouTitle": "Thank You",

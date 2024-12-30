@@ -6,7 +6,6 @@ export const getStyles = (props: Theme) =>
   StyleSheet.create({
     container: {
       marginBottom: 16,
-      // backgroundColor: props.primaryBackground.lightGrey,
       paddingHorizontal: 5,
       paddingBottom: 5,
     },

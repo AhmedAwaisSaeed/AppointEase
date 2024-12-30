@@ -1,4 +1,3 @@
-// All language related utils will be added here
 import {I18nManager} from 'react-native';
 
 const isRTL: boolean = I18nManager.isRTL;

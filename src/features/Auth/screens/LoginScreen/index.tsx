@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   View,
-  Alert,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -18,13 +17,17 @@ import {patientData} from '../../../../utils/mockData/patient';
 import {HeaderComponent} from '../../../../components';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {useAuth} from '../../../../context/AuthProvider';
+import {useCustomAlertStore} from '../../../../store/CustomAlertStore';
 import StackNames from '../../../../navigation/StackNames';
+
 const LoginScreen = () => {
   const {setUserType} = useAuth();
   const {theme} = useTheme();
   const styles = getStyles(theme);
   const {t} = useTranslation();
   const navigation = useNavigation<NavigationProp<any>>();
+  const {showAlert} = useCustomAlertStore();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -35,22 +38,26 @@ const LoginScreen = () => {
     setTouched(true);
 
     if (!username || !password) {
-      Alert.alert(t('auth.loginFailed'), t('auth.fillAllFields'));
+      showAlert(t('auth.loginFailed'), t('auth.fillAllFields'));
       return;
     }
 
     setLoading(true);
 
-    // Simulate API call delay
+    const admin = adminData.find(
+      user => user.username === username && user.password === password,
+    );
+
+    const patient = patientData.find(
+      user => user.username === username && user.password === password,
+    );
+
+    if (!admin && !patient) {
+      showAlert(t('auth.loginFailed'), t('auth.invalidCredentials'));
+    }
+
+    // Simulate API call delay for navigation
     setTimeout(() => {
-      const admin = adminData.find(
-        user => user.username === username && user.password === password,
-      );
-
-      const patient = patientData.find(
-        user => user.username === username && user.password === password,
-      );
-
       setLoading(false);
 
       if (admin) {
@@ -75,8 +82,6 @@ const LoginScreen = () => {
             },
           ],
         });
-      } else {
-        Alert.alert(t('auth.loginFailed'), t('auth.invalidCredentials'));
       }
     }, 1500);
   };

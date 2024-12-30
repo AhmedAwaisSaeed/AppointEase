@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, ScrollView, Alert} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {getStyles} from './styles';
 import {useTranslation} from 'react-i18next';
 import {useTheme} from '../../../../theme';
@@ -20,6 +20,7 @@ import {
 } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ScreenNames from '../../../../navigation/ScreenNames';
+import {useCustomAlertStore} from '../../../../store/CustomAlertStore';
 
 const timeSlots = [
   '09:00 AM',
@@ -50,6 +51,7 @@ const AddNewAppointment = () => {
   const {t} = useTranslation();
   const route = useRoute<AddNewAppointmentRouteProp>();
   const navigation = useNavigation<NavigationProp<any>>();
+  const {showAlert} = useCustomAlertStore();
 
   const {adminData, addAppointment, loadAdminData} = useAdminStore();
 
@@ -84,12 +86,11 @@ const AddNewAppointment = () => {
       !appointmentTime ||
       !reason
     ) {
-      Alert.alert(t('common.error'), t('appointments.fillAllFields'));
+      showAlert(t('common.error'), t('appointments.fillAllFields'));
       return;
     }
 
     if (editMode) {
-      // Update existing appointment
       const updatedAppointments = adminData[0]?.appointments.map(appt =>
         appt.id === appointment?.id
           ? {
@@ -104,14 +105,12 @@ const AddNewAppointment = () => {
           : appt,
       );
 
-      // Update state and persist data
       adminData[0].appointments = updatedAppointments;
-      AsyncStorage.setItem('adminData', JSON.stringify(adminData)); // Persist data
-      Alert.alert(t('appointments.updatedSuccess'), [
-        {text: t('common.ok'), onPress: () => navigation.goBack()},
-      ]);
+      AsyncStorage.setItem('adminData', JSON.stringify(adminData));
+
+      showAlert(t('appointments.updatedSuccess'), '');
+      navigation.goBack();
     } else {
-      // Check for double-booking
       const isDoubleBooked = adminData[0]?.appointments.some(
         appt =>
           appt.appointmentDate ===
@@ -120,7 +119,7 @@ const AddNewAppointment = () => {
       );
 
       if (isDoubleBooked) {
-        Alert.alert(
+        showAlert(
           t('appointments.error'),
           t('appointments.doubleBookingError', {
             time: appointmentTime,
@@ -129,7 +128,6 @@ const AddNewAppointment = () => {
         return;
       }
 
-      // Add new appointment
       const newAppointment = {
         id: new Date().getTime(),
         patientName,
@@ -140,12 +138,9 @@ const AddNewAppointment = () => {
         status: 'Pending',
       };
 
-      // Update state and persist data
       adminData[0]?.appointments.push(newAppointment);
-      AsyncStorage.setItem('adminData', JSON.stringify(adminData)); // Persist data
-      // Alert.alert(t('appointments.success'), t('appointments.confirmation'), [
-      //   {text: t('common.ok'), onPress: clearForm},
-      // ]);
+      AsyncStorage.setItem('adminData', JSON.stringify(adminData));
+
       navigation.navigate(ScreenNames.ThankYouScreen);
     }
   };
